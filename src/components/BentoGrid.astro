@@ -18,10 +18,10 @@ const projects = [
     link: "/gosh",
   },
   {
-    title: "Portfolio",
-    description: "The website that you are accessing",
-    stack: ["Astro", "Tailwind", "React"],
-    link: "https://github.com/dm0x23/Portfolio-website",
+    title: "F1 Tire Degradation",
+    description: "Machine learning model to predict F1 tire degradation",
+    stack: ["Python", "Machine Learning", "Data Science"],
+    link: "https://github.com/dm0x23/f1-tire-degradation",
   },
   {
     title: "Self-Driving Car",
@@ -38,7 +38,7 @@ const projects = [
 >
   {/* 1. Main Introduction Tile */}
   <div
-    class="col-span-1 md:col-span-6 lg:col-span-4 row-span-1 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 group liquid-glass hover:frosty-glass min-h-[200px]"
+    class="col-span-1 md:col-span-3 lg:col-span-2 row-span-1 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 group liquid-glass hover:frosty-glass min-h-[200px]"
   >
     <div class="flex flex-col gap-2">
       <h1
@@ -47,23 +47,43 @@ const projects = [
         Summary
       </h1>
       <p class="text-white/60 text-base leading-relaxed">
-        Based in Chennai, India. <br />Currently working as an AI research
-        intern at Indian Institute of Technology, BHU, Varanasi. <br />I
-        specialize in building systems and researching in AI.
+        19-year-old developer based in Chennai, India. <br />
+        Drawn to the layer where software meets the metal. <br />
+        Building systems with Go and Rust, and exploring AI models from scratch.
       </p>
     </div>
   </div>
 
-  {/* 2. Portfolio */}
+  {/* 2. Tech Stack Tile */}
+  <div
+    class="col-span-1 md:col-span-3 lg:col-span-2 row-span-1 rounded-3xl p-8 flex flex-col justify-center transition-all duration-500 group liquid-glass hover:frosty-glass min-h-[200px]"
+  >
+    <h3
+      class="text-white/40 text-sm font-semibold uppercase tracking-widest mb-6"
+    >
+      Core Stack
+    </h3>
+    <div class="flex flex-wrap gap-2">
+      {
+        techStack.map((tech) => (
+          <span class="px-3 py-1.5 text-xs md:text-sm rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-purple-500/20 hover:border-purple-500/50 hover:text-white transition-all duration-300 cursor-default">
+            {tech}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+
+  {/* 3. Portfolio */}
   <a
     href={projects[1].link}
     target="_blank"
-    class="col-span-1 md:col-span-3 lg:col-span-2 row-span-1 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 group liquid-glass hover:frosty-glass cursor-pointer min-h-[200px]"
+    class="col-span-1 md:col-span-3 lg:col-span-2 row-span-1 rounded-3xl p-8 flex flex-col justify-between transition-all duration-500 group liquid-glass hover:frosty-glass cursor-pointer min-h-[300px]"
   >
-    <div class="flex justify-between items-start">
+    <div class="flex justify-between items-start mb-4">
       <div>
-        <h3 class="text-2xl font-bold text-white mb-1">Portfolio</h3>
-        <p class="text-white/50 text-sm">This website.</p>
+        <h3 class="text-2xl font-bold text-white mb-1">{projects[1].title}</h3>
+        <p class="text-white/50 text-sm">{projects[1].description}</p>
       </div>
       <div
         class="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center group-hover:bg-white group-hover:text-black transition-all"
@@ -83,7 +103,16 @@ const projects = [
         >
       </div>
     </div>
-    <div class="flex flex-wrap gap-2 mt-4">
+
+    <div
+      class="rounded-2xl overflow-hidden border border-white/10 shadow-lg mb-4"
+    >
+      <video loop muted playsinline preload="auto" onmouseenter="this.play()" onmouseleave="this.pause()" class="w-full object-cover">
+        <source src="/f1-tire-degradation.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+    <div class="flex flex-wrap gap-2 mt-auto">
       {
         projects[1].stack.map((t) => (
           <span class="px-2 py-1 text-xs rounded-md border border-white/10 bg-white/5 text-white/60 group-hover:bg-purple-500/10 group-hover:border-purple-500/30 transition-colors">
@@ -93,26 +122,6 @@ const projects = [
       }
     </div>
   </a>
-
-  {/* 3. Tech Stack Tile */}
-  <div
-    class="col-span-1 md:col-span-6 lg:col-span-2 row-span-1 rounded-3xl p-8 flex flex-col justify-center transition-all duration-500 group liquid-glass hover:frosty-glass min-h-[200px]"
-  >
-    <h3
-      class="text-white/40 text-sm font-semibold uppercase tracking-widest mb-6"
-    >
-      Core Stack
-    </h3>
-    <div class="flex flex-wrap gap-2">
-      {
-        techStack.map((tech) => (
-          <span class="px-3 py-1.5 text-xs md:text-sm rounded-lg border border-white/10 bg-white/5 text-white/70 hover:bg-purple-500/20 hover:border-purple-500/50 hover:text-white transition-all duration-300 cursor-default">
-            {tech}
-          </span>
-        ))
-      }
-    </div>
-  </div>
 
   {/* 4. Project 1: Gosh */}
   <a
@@ -147,7 +156,7 @@ const projects = [
     <div
       class="rounded-2xl overflow-hidden border border-white/10 shadow-lg mb-4"
     >
-      <video autoplay loop muted playsinline class="w-full object-cover">
+      <video loop muted playsinline preload="auto" onmouseenter="this.play()" onmouseleave="this.pause()" class="w-full object-cover">
         <source src="/gosh.webm" type="video/webm" />
       </video>
     </div>
@@ -198,7 +207,7 @@ const projects = [
     <div
       class="rounded-2xl overflow-hidden border border-white/10 shadow-lg mb-4"
     >
-      <video autoplay loop muted playsinline class="w-full object-cover">
+      <video loop muted playsinline preload="auto" onmouseenter="this.play()" onmouseleave="this.pause()" class="w-full object-cover">
         <source src="/selfdrivingcar.webm" type="video/webm" />
       </video>
     </div>

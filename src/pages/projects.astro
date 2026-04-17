@@ -35,6 +35,20 @@ const projects = [
     link: "https://github.com/dm0x23/Journaling-Chatbot",
     image: "/journalingchatbot.png",
   },
+  {
+    title: "F1 Tire Degradation",
+    description: "Simulates F1 race strategies by calculating lap time deltas",
+    tags: ["Go", "Mariadb", "React", "gin-gonic", "gorm-orm"],
+    link: "https://github.com/dm0x23/f1-tire-degradation",
+    video: "/f1-tire-degradation.mp4",
+  },
+  {
+    title: "Productivity Tracker",
+    description: "An application to track daily tasks and monitor productivity metrics.",
+    tags: ["React", "SQLite"],
+    link: "https://github.com/dm0x23/productivity-tracker",
+    video: "/koa.mp4",
+  },
 ];
 ---
 
@@ -67,10 +81,12 @@ const projects = [
             {project.video ? (
               <div class="mb-6 rounded-2xl overflow-hidden border border-white/10 shadow-2xl relative group-hover:shadow-white/10 transition-all">
                 <video
-                  autoplay
                   loop
                   muted
                   playsinline
+                  preload="auto"
+                  onmouseenter="this.play()"
+                  onmouseleave="this.pause()"
                   class="w-full object-cover"
                 >
                   <source

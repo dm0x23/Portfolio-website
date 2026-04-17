@@ -2,7 +2,7 @@ import { useState } from "react";
 
 export default function CopyCommand() {
     const [copied, setCopied] = useState(false);
-    const command = "curl -fsSL https://denishamadhura.vercel.app/install.sh | bash";
+    const command = "curl -fsSL https://denisha.co.in/install.sh | bash";
 
     const handleCopy = async () => {
         try {

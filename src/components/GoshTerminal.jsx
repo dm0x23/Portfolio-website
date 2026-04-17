@@ -15,7 +15,7 @@ const GoshTerminal = () => {
         version: "Gosh v1.0.0 (linux/amd64)",
         whoami: "guest",
         ls: "README.md  gosh  LICENSE  go.mod  go.sum",
-        install: "To install: curl -fsSL https://denishamadhura.vercel.app/install.sh | bash",
+        install: "To install: curl -fsSL https://denisha.co.in/install.sh | bash",
         gosh: "You are already using gosh!",
     };
 
