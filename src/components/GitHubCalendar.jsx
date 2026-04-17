@@ -8,7 +8,7 @@ const GitHubCalendar = () => {
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const response = await fetch('https://github-contributions-api.jogruber.de/v4/madden-go?y=last');
+                const response = await fetch('https://github-contributions-api.jogruber.de/v4/dm0x23?y=last');
                 if (!response.ok) {
                     throw new Error('Failed to fetch GitHub data');
                 }
